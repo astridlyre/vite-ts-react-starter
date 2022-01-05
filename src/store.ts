@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, no-unused-vars */
-import create, { SetState } from 'zustand'
+import create from 'zustand'
 import { persist } from 'zustand/middleware'
 
 export type CounterState = {
   count: number
-  increment: SetState<CounterState>
-  decrement: SetState<CounterState>
+  increment: () => void
+  decrement: () => void
 }
 
 export type StateSelector = (state: CounterState) => unknown
