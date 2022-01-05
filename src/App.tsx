@@ -1,8 +1,8 @@
-import { appStyle, appTheme } from './App.css'
+import { appStyle, container } from './App.css'
 
 export function App() {
   return (
-    <div className={appTheme}>
+    <div className={container}>
       <h1 className={appStyle}>Hello, World!</h1>
     </div>
   )
