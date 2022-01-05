@@ -3,10 +3,16 @@ import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles'
 
 const space = {
   none: 0,
-  small: '4px',
-  medium: '8px',
-  large: '16px',
-  // etc.
+  tiny: '0.2rem',
+  small: '0.32rem',
+  medium: '0.64rem',
+  large: '1.2rem',
+  xlarge: '2.4rem',
+}
+
+const border = {
+  none: 0,
+  small: '1px solid rgba(0,0,0,0.1)',
 }
 
 const responsiveProperties = defineProperties({
@@ -29,16 +35,26 @@ const responsiveProperties = defineProperties({
       'space-between',
     ],
     alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
+    gap: space,
     paddingTop: space,
     paddingBottom: space,
     paddingLeft: space,
     paddingRight: space,
-    // etc.
+    marginTop: space,
+    marginBottom: space,
+    marginRight: space,
+    marginLeft: space,
+
+    border,
+    borderRadius: space,
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
     paddingX: ['paddingLeft', 'paddingRight'],
     paddingY: ['paddingTop', 'paddingBottom'],
+    margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
+    marginX: ['marginLeft', 'marginRight'],
+    marginY: ['marginTop', 'marginBottom'],
     placeItems: ['justifyContent', 'alignItems'],
   },
 })

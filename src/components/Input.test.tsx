@@ -1,10 +1,10 @@
-import { render, screen, userEvent } from '../utils/testUtils'
+import { render, userEvent } from '../utils/testUtils'
 import { describe, it, expect } from 'vitest'
 import { Input } from './Input'
 
 describe('Input', async () => {
   it('should render the input', () => {
-    render(
+    const component = render(
       <Input
         name='email'
         type='email'
@@ -15,16 +15,16 @@ describe('Input', async () => {
       />,
     )
 
-    expect(screen.getByText('Email Address')).toBeInTheDocument()
+    expect(component.getByText('Email Address')).not.toBeNull()
     expect(
-      screen.getByRole('textbox', {
+      component.getByRole('textbox', {
         name: /email address/i,
       }),
-    ).toBeInTheDocument()
+    ).not.toBeNull()
   })
 
   it('should change input value', () => {
-    render(
+    const component = render(
       <Input
         name='email'
         type='email'
@@ -35,18 +35,16 @@ describe('Input', async () => {
       />,
     )
 
-    screen.logTestingPlaygroundURL()
-
-    const input = screen.getByRole('textbox', {
+    const input = component.getByRole('textbox', {
       name: /email address/i,
     })
-    expect(input).toBeInTheDocument()
+    expect(input).not.toBeNull()
     userEvent.type(input, '1337')
-    expect(input).toHaveValue('1337')
+    expect((input as HTMLInputElement).value).toBe('1337')
   })
 
   it('should render the input with error', () => {
-    render(
+    const component = render(
       <Input
         name='email'
         type='email'
@@ -58,11 +56,11 @@ describe('Input', async () => {
     )
 
     expect(
-      screen.getByRole('textbox', {
+      component.getByRole('textbox', {
         name: /email address/i,
       }),
-    ).toBeInTheDocument()
-    expect(screen.getByRole('alert')).toHaveTextContent(
+    ).not.toBeNull()
+    expect(component.getByRole('alert').textContent).toBe(
       'Please enter your email',
     )
   })
