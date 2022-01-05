@@ -1,12 +1,20 @@
-import { vars } from './Theme/Theme.css'
 import { style } from '@vanilla-extract/css'
 import { sprinkles } from './sprinkles.css'
 
-export const appStyle = style({
-  fontSize: '4rem',
-  padding: vars.space.small,
-  textAlign: 'center',
-})
+// Mix in sprinkles with a style using an array
+export const appStyle = style([
+  sprinkles({
+    padding: 'small',
+    color: {
+      lightMode: 'gray-900',
+      darkMode: 'blue-50',
+    },
+  }),
+  {
+    fontSize: '4rem',
+    textAlign: 'center',
+  },
+])
 
 export const container = sprinkles({
   display: 'flex',
@@ -20,5 +28,4 @@ export const container = sprinkles({
     darkMode: 'gray-700',
   },
   minHeight: '100vh',
-  color: 'blue-50',
 })
