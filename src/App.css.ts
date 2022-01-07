@@ -13,7 +13,7 @@ export const headingStyle = sprinkles({
 export const paraStyle = sprinkles({
   color: {
     lightMode: 'gray-650',
-    darkMode: 'gray-500',
+    darkMode: 'gray-450',
   },
   fontFamily: 'default',
   fontSize: 'h6',
@@ -28,7 +28,20 @@ export const container = sprinkles({
   flexDirection: 'column',
   alignItems: 'center',
   background: {
-    lightMode: 'gray-100',
-    darkMode: 'gray-800',
+    lightMode: 'gray-050',
+    darkMode: 'gray-850',
+  },
+})
+
+export const linkStyle = sprinkles({
+  color: {
+    lightMode: 'blue-500',
+    darkMode: 'blue-500',
+    hoverLight: 'blue-700',
+    hoverDark: 'blue-400',
+    visitedDark: 'purple-400',
+    visitedLight: 'purple-600',
+    visitedHoverDark: 'purple-300',
+    visitedHoverLight: 'purple-800',
   },
 })

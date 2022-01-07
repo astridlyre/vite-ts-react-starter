@@ -19,6 +19,13 @@ const responsiveProperties = defineProperties({
     focus: { selector: '&:focus' },
     active: { selector: '&:active' },
     disabled: { selector: '&:disabled' },
+    visited: { selector: '&:visited' },
+    visitedHover: { selector: '&:visited:hover' },
+    visitedFocus: { selector: '&:visited:focus' },
+    visitedActive: { selector: '&:visited:active' },
+    visitedDisabled: { selector: '&:visited:disabled' },
+    valid: { selector: '&:valid' },
+    invalid: { selector: '&:invalid' },
   },
   defaultCondition: 'base',
   responsiveArray: ['base', 'mobile', 'tablet', 'laptop', 'desktop'],
@@ -84,10 +91,35 @@ const responsiveProperties = defineProperties({
   },
 })
 
+const light = { '@media': '(prefers-color-scheme: light)' }
+const dark = { '@media': '(prefers-color-scheme: dark)' }
+
 const colorProperties = defineProperties({
   conditions: {
-    lightMode: { '@media': '(prefers-color-scheme: light)' },
-    darkMode: { '@media': '(prefers-color-scheme: dark)' },
+    lightMode: light,
+    darkMode: dark,
+    hoverLight: { ...light, selector: '&:hover' },
+    hoverDark: { ...dark, selector: '&:hover' },
+    focusLight: { ...light, selector: '&:focus' },
+    focusDark: { ...dark, selector: '&:focus' },
+    activeLight: { ...light, selector: '&:active' },
+    activeDark: { ...dark, selector: '&:active' },
+    disabledLight: { ...light, selector: '&:disabled' },
+    disabledDark: { ...dark, selector: '&:disabled' },
+    visitedLight: { ...light, selector: '&:visited' },
+    visitedDark: { ...dark, selector: '&:visited' },
+    visitedHoverLight: { ...light, selector: '&:visited:hover' },
+    visitedHoverDark: { ...dark, selector: '&:visited:hover' },
+    visitedFocusLight: { ...light, selector: '&:visited:focus' },
+    visitedFocusDark: { ...dark, selector: '&:visited:focus' },
+    visitedActiveLight: { ...light, selector: '&:visited:active' },
+    visitedActiveDark: { ...dark, selector: '&:visited:active' },
+    visitedDisabledLight: { ...light, selector: '&:visited:disabled' },
+    visitedDisabledDark: { ...dark, selector: '&:visited:disabled' },
+    validLight: { ...light, selector: '&:valid' },
+    validDark: { ...dark, selector: '&:valid' },
+    invalidLight: { ...light, selector: '&:invalid' },
+    invalidDark: { ...dark, selector: '&:invalid' },
   },
   defaultCondition: false,
   properties: {

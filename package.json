@@ -10,6 +10,7 @@
     "coverage": "vitest --coverage"
   },
   "dependencies": {
+    "@ebflat9/fp": "^1.2.57",
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/sprinkles": "^1.3.3",
     "@vanilla-extract/vite-plugin": "^3.1.2",
@@ -25,17 +26,17 @@
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "^17.0.8",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
     "@types/testing-library__jest-dom": "^5.14.2",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
-    "@vitejs/plugin-react": "^1.0.7",
+    "@vitejs/plugin-react": "^1.1.4",
     "eslint": "^8.6.0",
     "eslint-plugin-react": "^7.28.0",
     "jsdom": "^19.0.0",
     "typescript": "^4.5.4",
-    "vite": "^2.7.2",
+    "vite": "^2.7.10",
     "vitest": "^0.0.133"
   }
 }
