@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Default fonts from fonts.google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner&family=Fraunces:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Example prefetching an API request -->
+    <link
+      rel="preload"
+      href="https://catfact.ninja/fact"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Vite App</title>
+
+    <!-- Main script entrypoint -->
+    <script type="module" src="/src/main.tsx" defer></script>
+
     <!-- Base stylesheet with normalization, inlined to save an HTTP request -->
     <style>
       *,
@@ -345,28 +367,6 @@
         }
       }
     </style>
-
-    <!-- Default fonts from fonts.google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Commissioner&family=Fraunces:wght@500&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Example prefetching an API request -->
-    <link
-      rel="preload"
-      href="https://catfact.ninja/fact"
-      as="fetch"
-      crossorigin="anonymous"
-    />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Vite App</title>
-
-    <!-- Main script entrypoint -->
-    <script type="module" src="/src/main.tsx" defer></script>
   </head>
   <body>
     <div id="root"></div>
