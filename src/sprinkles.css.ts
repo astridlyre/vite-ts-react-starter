@@ -1,88 +1,102 @@
-// Make your own utility css
 import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles'
+import { vars } from './theme'
 
-const space = {
-  none: 0,
-  tiny: '0.2rem',
-  small: '0.32rem',
-  medium: '0.64rem',
-  large: '1.2rem',
-  xlarge: '2.4rem',
-}
-
-const border = {
-  none: 0,
-  small: '1px solid rgba(0,0,0,0.1)',
-}
+const colors = vars.colors
+const spacing = vars.spacing
+const size = vars.size
+const fontFamily = vars.font
+const border = vars.border
+const boxShadow = vars.boxShadow
 
 const responsiveProperties = defineProperties({
   conditions: {
-    mobile: {},
+    base: {},
+    mobile: { '@media': 'screen and (min-width: 544px)' },
     tablet: { '@media': 'screen and (min-width: 768px)' },
-    desktop: { '@media': 'screen and (min-width: 1024px)' },
+    laptop: { '@media': 'screen and (min-width: 1012px)' },
+    desktop: { '@media': 'screen and (min-width: 1280px)' },
+    hover: { selector: '&:hover' },
+    focus: { selector: '&:focus' },
+    active: { selector: '&:active' },
+    disabled: { selector: '&:disabled' },
   },
-  defaultCondition: 'mobile',
+  defaultCondition: 'base',
+  responsiveArray: ['base', 'mobile', 'tablet', 'laptop', 'desktop'],
   properties: {
-    minHeight: ['100vh'],
-    display: ['none', 'flex', 'block', 'inline'],
+    display: ['none', 'flex', 'block', 'inline', 'inline-block'],
     flexDirection: ['row', 'column'],
+    flexFlow: ['row wrap', 'column wrap'],
+    flexGrow: ['1', '0'],
+    flexBasis: spacing,
     justifyContent: [
       'stretch',
       'flex-start',
       'center',
       'flex-end',
-      'space-around',
-      'space-between',
+      'spacing-around',
+      'spacing-between',
     ],
     alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
-    gap: space,
-    paddingTop: space,
-    paddingBottom: space,
-    paddingLeft: space,
-    paddingRight: space,
-    marginTop: space,
-    marginBottom: space,
-    marginRight: space,
-    marginLeft: space,
-
+    gap: spacing,
+    paddingTop: spacing,
+    paddingBottom: spacing,
+    paddingInlineStart: spacing,
+    paddingInlineEnd: spacing,
+    paddingLeft: spacing,
+    paddingRight: spacing,
+    marginTop: spacing,
+    marginBottom: spacing,
+    marginInlineStart: spacing,
+    marginInlineEnd: spacing,
+    marginRight: spacing,
+    marginLeft: spacing,
+    top: spacing,
+    bottom: spacing,
+    left: spacing,
+    right: spacing,
     border,
-    borderRadius: space,
+    borderRadius: spacing,
+    fontSize: size,
+    fontFamily,
+    boxShadow,
+    minHeight: ['100vh'],
+    maxWidth: spacing,
+    maxHegith: spacing,
   },
   shorthands: {
-    padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
-    paddingX: ['paddingLeft', 'paddingRight'],
+    padding: [
+      'paddingTop',
+      'paddingBottom',
+      'paddingInlineStart',
+      'paddingInlineEnd',
+    ],
+    paddingX: ['paddingInlineStart', 'paddingInlineEnd'],
     paddingY: ['paddingTop', 'paddingBottom'],
-    margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
-    marginX: ['marginLeft', 'marginRight'],
+    margin: [
+      'marginTop',
+      'marginBottom',
+      'marginInlineStart',
+      'marginInlineEnd',
+    ],
+    marginX: ['marginInlineStart', 'marginInlineEnd'],
     marginY: ['marginTop', 'marginBottom'],
     placeItems: ['justifyContent', 'alignItems'],
   },
 })
 
-const colors = {
-  'blue-50': '#eff6ff',
-  'blue-100': '#dbeafe',
-  'blue-200': '#bfdbfe',
-  'gray-700': '#374151',
-  'gray-800': '#1f2937',
-  'gray-900': '#111827',
-  // etc.
-}
-
 const colorProperties = defineProperties({
   conditions: {
-    lightMode: {},
+    lightMode: { '@media': '(prefers-color-scheme: light)' },
     darkMode: { '@media': '(prefers-color-scheme: dark)' },
   },
-  defaultCondition: 'lightMode',
+  defaultCondition: false,
   properties: {
     color: colors,
     background: colors,
-    // etc.
+    borderColor: colors,
+    outlineColor: colors,
   },
 })
 
 export const sprinkles = createSprinkles(responsiveProperties, colorProperties)
-
-// It's a good idea to export the Sprinkles type too
 export type Sprinkles = Parameters<typeof sprinkles>[0]

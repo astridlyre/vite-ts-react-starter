@@ -1,4 +1,4 @@
-import { render, userEvent } from '../utils/testUtils'
+import { render, userEvent } from '../utils/testing'
 import { describe, it, expect } from 'vitest'
 import { Input } from './Input'
 
