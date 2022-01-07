@@ -44,4 +44,5 @@ export const linkStyle = sprinkles({
     visitedHoverDark: 'purple-300',
     visitedHoverLight: 'purple-800',
   },
+  transition: 'short',
 })

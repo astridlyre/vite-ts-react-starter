@@ -1,6 +1,6 @@
-import { createTheme } from '@vanilla-extract/css'
+import { createGlobalTheme } from '@vanilla-extract/css'
 
-export const [themeClass, vars] = createTheme({
+export const vars = createGlobalTheme(':root', {
   colors: {
     'gray-950': '#050608',
     'gray-900': '#0f1217',
@@ -121,5 +121,11 @@ export const [themeClass, vars] = createTheme({
     sm: '1px solid transparent',
     md: '2px solid transparent',
     lg: '4px solid transparent',
+  },
+
+  transitions: {
+    short: 'all 0.1s ease-out',
+    medium: 'all 0.2s ease-out',
+    long: 'all 0.3s ease-out',
   },
 })

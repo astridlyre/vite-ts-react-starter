@@ -1,5 +1,5 @@
 import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles'
-import { vars } from './theme'
+import { vars } from './theme/styles.css'
 
 const colors = vars.colors
 const spacing = vars.spacing
@@ -7,6 +7,7 @@ const size = vars.size
 const fontFamily = vars.font
 const border = vars.border
 const boxShadow = vars.boxShadow
+const transition = vars.transitions
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -69,6 +70,7 @@ const responsiveProperties = defineProperties({
     minHeight: ['100vh'],
     maxWidth: spacing,
     maxHegith: spacing,
+    transition,
   },
   shorthands: {
     padding: [
