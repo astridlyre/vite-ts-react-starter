@@ -26,7 +26,7 @@ export function App() {
         <p className={paraStyle}>
           Your cat fact of the day is:{' '}
           <q>
-            <em>{data?.fact}</em>
+            <em>{data?.fact ? data.fact : 'Loading...'}</em>
           </q>
         </p>
       </main>

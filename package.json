@@ -1,12 +1,12 @@
 {
   "name": "vite-ts-react-starter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest run",
+    "test": "vitest",
     "coverage": "vitest --coverage"
   },
   "dependencies": {
@@ -32,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "@vitejs/plugin-react": "^1.1.4",
+    "c8": "^7.11.0",
     "eslint": "^8.6.0",
     "eslint-plugin-react": "^7.28.0",
     "jsdom": "^19.0.0",

@@ -2,7 +2,8 @@
 export type EventListenerFunction = (event: CustomEvent) => void
 
 export type EventListenerOptions = {
-  once: boolean
+  once?: boolean
+  emitter?: Pick<IEventBus, 'on' | 'off'>
 }
 
 type EventListenerType = {

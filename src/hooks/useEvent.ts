@@ -11,11 +11,13 @@ export function useEvent(
   handler: EventListenerFunction,
   options?: EventListenerOptions,
 ) {
+  const emitter = options?.emitter ?? EventBus
+
   useEffect(() => {
     if (handler) {
-      EventBus.on(event, handler, options)
-      return () => EventBus.removeListener(event, handler)
+      emitter.on(event, handler, options)
+      return () => emitter.off(event, handler)
     }
     return undefined
-  }, [event, handler, options])
+  }, [event, handler, options, emitter])
 }
