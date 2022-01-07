@@ -1,48 +1,64 @@
+import { style } from '@vanilla-extract/css'
 import { sprinkles } from './sprinkles.css'
+import { vars, themed } from './theme'
 
 export const headingStyle = sprinkles({
-  marginTop: 'spacer-9',
+  marginTop: 'spacer9',
   fontSize: 'h1',
   color: {
-    lightMode: 'gray-900',
-    darkMode: 'gray-100',
+    lightMode: 'gray900',
+    darkMode: 'gray100',
   },
   fontFamily: 'accent',
 })
 
 export const paraStyle = sprinkles({
   color: {
-    lightMode: 'gray-650',
-    darkMode: 'gray-450',
+    lightMode: 'gray650',
+    darkMode: 'gray450',
   },
   fontFamily: 'default',
   fontSize: 'h6',
-  maxWidth: 'readable-line-length-sm',
+  maxWidth: 'readableLineLengthSm',
 })
 
 export const container = sprinkles({
   minHeight: '100vh',
   fontFamily: 'default',
   display: 'flex',
-  paddingX: 'spacer-4',
+  paddingX: 'spacer4',
   flexDirection: 'column',
   alignItems: 'center',
   background: {
-    lightMode: 'gray-050',
-    darkMode: 'gray-850',
+    lightMode: 'gray050',
+    darkMode: 'gray850',
   },
 })
 
-export const linkStyle = sprinkles({
-  color: {
-    lightMode: 'blue-500',
-    darkMode: 'blue-500',
-    hoverLight: 'blue-700',
-    hoverDark: 'blue-400',
-    visitedDark: 'purple-400',
-    visitedLight: 'purple-600',
-    visitedHoverDark: 'purple-300',
-    visitedHoverLight: 'purple-800',
-  },
-  transition: 'short',
-})
+export const linkStyle = style([
+  sprinkles({
+    color: {
+      lightMode: 'blue500',
+      darkMode: 'blue500',
+    },
+    transition: 'short',
+  }),
+  themed({
+    lightMode: {
+      ':hover': {
+        color: vars.colors.blue700,
+      },
+      ':visited': {
+        color: vars.colors.purple800,
+      },
+    },
+    darkMode: {
+      ':hover': {
+        color: vars.colors.blue400,
+      },
+      ':visited': {
+        color: vars.colors.purple300,
+      },
+    },
+  }),
+])
