@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import useSWR from 'swr'
-import { apiEndpoint } from '../../app.config'
+import { apiEndpoint } from '../config'
 
 class FetcherError {
   info: Record<string, unknown>
