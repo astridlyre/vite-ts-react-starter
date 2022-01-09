@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import useSWR from 'swr'
-import { fetcher } from '../utils/fetcher'
 import { apiEndpoint } from '../config'
+import { fetcher } from '../fetcher'
+import useSWR from 'swr'
 
 export function useCat() {
   const { data, error } = useSWR(apiEndpoint, fetcher)

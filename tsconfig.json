@@ -7,12 +7,8 @@
       "DOM.Iterable",
       "ESNext"
     ],
-    "rootDir": "src",
-    "baseUrl": "src",
-    "allowJs": false,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
@@ -21,14 +17,23 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "types": [
+      "vite/client"
+    ],
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
-    "src/**/*"
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
-    "node_modules",
-    "coverage",
-    "dist"
+    "./node_modules",
+    "./coverage",
+    "./dist"
   ]
 }

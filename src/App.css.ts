@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { sprinkles } from './sprinkles.css'
-import { vars, themed } from './theme'
+import { vars, themed, responsive } from './theme'
 
 export const headingStyle = sprinkles({
   marginTop: 'spacer9',
@@ -59,6 +59,11 @@ export const linkStyle = style([
       ':visited': {
         color: vars.colors.purple300,
       },
+    },
+  }),
+  responsive({
+    mobile: {
+      color: vars.colors.red600,
     },
   }),
 ])

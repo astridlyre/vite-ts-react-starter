@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars, no-undef, @typescript-eslint/no-unused-vars */
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { fetcher, type FetcherError } from './fetcher'
+import { fetcher, type FetcherError } from '.'
 
 const mockFetcherSuccess = (_input: RequestInfo, _init: RequestInit) =>
   Promise.resolve({

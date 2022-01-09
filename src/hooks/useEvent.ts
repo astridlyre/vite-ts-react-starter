@@ -4,7 +4,7 @@ import {
   type EventListenerOptions,
   type EventListenerFunction,
   EventBus,
-} from '../events/'
+} from '../events'
 
 export function useEvent(
   event: string,
