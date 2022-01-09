@@ -1,31 +1,36 @@
-import { sprinkles } from '~/sprinkles.css'
+import { style } from '@vanilla-extract/css'
+import { vars, themed } from '../theme'
 
-export const rootStyle = sprinkles({
-  display: 'flex',
-  padding: 'spacer5',
-  flexDirection: 'column',
-  placeItems: 'center',
-  color: {
-    lightMode: 'red800',
-    darkMode: 'red300',
+export const rootStyle = style([
+  {
+    display: 'flex',
+    padding: vars.spacing.s5,
+    flexDirection: 'column',
+    alignItems: 'center',
+    fontSize: vars.size.h6,
   },
-  background: {
-    lightMode: 'gray100',
-    darkMode: 'gray700',
-  },
-  fontSize: 'h6',
-})
+  themed({
+    lightMode: {
+      color: vars.color.red800,
+    },
+    darkMode: {
+      color: vars.color.red300,
+    },
+  }),
+])
 
-export const buttonStyle = sprinkles({
-  padding: 'rspacer4',
-  borderRadius: 'spacer1',
-  border: 'none',
-  background: {
-    lightMode: 'gray700',
-    darkMode: 'gray200',
+export const buttonStyle = style([
+  {
+    padding: vars.spacing.r4,
+    borderRadius: vars.spacing.s1,
+    border: 'none',
   },
-  color: {
-    lightMode: 'gray900',
-    darkMode: 'gray900',
-  },
-})
+  themed({
+    lightMode: {
+      background: vars.color.gray700,
+    },
+    darkMode: {
+      background: vars.color.gray900,
+    },
+  }),
+])

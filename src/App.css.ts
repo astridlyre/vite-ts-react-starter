@@ -1,69 +1,82 @@
 import { style } from '@vanilla-extract/css'
-import { sprinkles } from './sprinkles.css'
 import { vars, themed, responsive } from './theme'
 
-export const headingStyle = sprinkles({
-  marginTop: 'spacer9',
-  fontSize: 'h1',
-  color: {
-    lightMode: 'gray900',
-    darkMode: 'gray100',
+export const headingStyle = style([
+  {
+    marginTop: vars.spacing.s9,
+    fontSize: vars.size.h1,
+    fontFamily: vars.font.accent,
   },
-  fontFamily: 'accent',
-})
-
-export const paraStyle = sprinkles({
-  color: {
-    lightMode: 'gray650',
-    darkMode: 'gray450',
-  },
-  fontFamily: 'default',
-  fontSize: 'h6',
-  maxWidth: 'readableLineLengthSm',
-})
-
-export const container = sprinkles({
-  minHeight: '100vh',
-  fontFamily: 'default',
-  display: 'flex',
-  paddingX: 'spacer4',
-  flexDirection: 'column',
-  alignItems: 'center',
-  background: {
-    lightMode: 'gray050',
-    darkMode: 'gray850',
-  },
-})
-
-export const linkStyle = style([
-  sprinkles({
-    color: {
-      lightMode: 'blue500',
-      darkMode: 'blue500',
-    },
-    transition: 'short',
-  }),
   themed({
     lightMode: {
+      color: vars.color.gray900,
+    },
+    darkMode: {
+      color: vars.color.gray100,
+    },
+  }),
+])
+
+export const paraStyle = style([
+  {
+    fontFamily: vars.font.default,
+    fontSize: vars.size.h6,
+    maxWidth: vars.lineLength.sm,
+  },
+  themed({
+    lightMode: {
+      color: vars.color.gray650,
+    },
+    darkMode: {
+      color: vars.color.gray450,
+    },
+  }),
+])
+
+export const container = style([
+  {
+    minHeight: '100vh',
+    fontFamily: 'default',
+    display: 'flex',
+    paddingLeft: vars.spacing.s4,
+    paddingRight: vars.spacing.s4,
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  themed({
+    lightMode: {
+      background: vars.color.gray050,
+    },
+    darkMode: {
+      background: vars.color.gray850,
+    },
+  }),
+])
+
+export const linkStyle = style([
+  themed({
+    lightMode: {
+      color: vars.color.blue500,
       ':hover': {
-        color: vars.colors.blue700,
+        color: vars.color.blue700,
       },
       ':visited': {
-        color: vars.colors.purple800,
+        color: vars.color.purple800,
       },
     },
     darkMode: {
+      color: vars.color.blue500,
       ':hover': {
-        color: vars.colors.blue400,
+        color: vars.color.blue400,
       },
       ':visited': {
-        color: vars.colors.purple300,
+        color: vars.color.purple300,
       },
     },
   }),
   responsive({
     mobile: {
-      color: vars.colors.red600,
+      color: vars.color.red600,
     },
   }),
 ])

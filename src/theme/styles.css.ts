@@ -1,7 +1,7 @@
 import { createGlobalTheme } from '@vanilla-extract/css'
 
 export const vars = createGlobalTheme(':root', {
-  colors: {
+  color: {
     gray950: '#050608',
     gray900: '#0f1217',
     gray850: '#1a1e26',
@@ -66,28 +66,25 @@ export const vars = createGlobalTheme(':root', {
     purple000: '#e6deed',
   },
   spacing: {
-    spacer0: '0px',
-    spacer1: '4px',
-    spacer2: '8px',
-    spacer3: '16px',
-    spacer4: '24px',
-    spacer5: '32px',
-    spacer6: '40px',
-    spacer7: '48px',
-    spacer8: '64px',
-    spacer9: '80px',
-    spacer10: '96px',
-    spacer11: '112px',
-    spacer12: '128px',
-    rspacer1: '0.0625rem',
-    rspacer2: '0.125rem',
-    rspacer3: '0.25rem',
-    rspacer4: '0.375rem',
-    rspacer5: '0.5rem',
-    rspacer6: '0.75rem',
-    readableLineLengthLg: '72ch',
-    readableLineLengthMd: '60ch',
-    readableLineLengthSm: '48ch',
+    zero: '0px',
+    s1: '4px',
+    s2: '8px',
+    s3: '16px',
+    s4: '24px',
+    s5: '32px',
+    s6: '40px',
+    s7: '48px',
+    s8: '64px',
+    s9: '80px',
+    s10: '96px',
+    s11: '112px',
+    s12: '128px',
+    r1: '0.0625rem',
+    r2: '0.125rem',
+    r3: '0.25rem',
+    r4: '0.375rem',
+    r5: '0.5rem',
+    r6: '0.75rem',
   },
   size: {
     xs: '0.64rem',
@@ -121,10 +118,14 @@ export const vars = createGlobalTheme(':root', {
     md: '2px solid transparent',
     lg: '4px solid transparent',
   },
-
-  transitions: {
+  transition: {
     short: 'all 0.1s ease-out',
     medium: 'all 0.2s ease-out',
     long: 'all 0.3s ease-out',
+  },
+  lineLength: {
+    sm: '48ch',
+    md: '62ch',
+    lg: '75ch',
   },
 })
